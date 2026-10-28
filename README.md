@@ -1,129 +1,187 @@
 # Customer Shopping Behavior Analysis
 
-![Customer Shopping Behavior Dashboard](./image/dashboard.png)
+## 📌 Overview
 
-## Project Overview
+This project analyzes customer shopping behavior to identify purchasing patterns, category performance, customer segments, and business insights. It combines Python, SQL, and Power BI to transform raw data into meaningful information that supports data-driven decision-making.
 
-This project analyzes customer shopping behavior to identify purchasing patterns, compare product categories, explore seasonal trends, and understand differences between customer groups.
+The project demonstrates the end-to-end data analytics workflow, from loading and cleaning data to querying, visualization, reporting, and presentation.
 
-The project uses Excel, MySQL, Python, and Power BI to move from data quality checks to business analysis and interactive visualization.
+## 🎯 Objectives
 
-## Business Objectives
+- Understand customer purchasing behavior.
+- Clean and validate the dataset.
+- Perform Exploratory Data Analysis (EDA) using Python.
+- Analyze customer and product trends using SQL.
+- Build an interactive Power BI dashboard.
+- Communicate findings through a report and presentation.
 
-- Analyze total and average purchase amounts.
-- Identify the product categories contributing the most to total purchase amount.
-- Compare purchasing patterns across seasons, genders, and locations.
-- Explore differences between subscribers and non-subscribers.
-- Present key metrics and findings through an interactive Power BI dashboard.
+## 📊 Dataset
 
-## Dataset
+The dataset contains customer shopping information, including:
 
-- **Records:** 3,900
-- **Columns:** 18
-- **Subject:** Customer shopping behavior
+- Customer demographics, such as age and gender
+- Products and product categories
+- Purchase amounts and locations
+- Seasons, sizes, and colors
+- Review ratings and subscription status
+- Shipping types, payment methods, and purchase frequency
 
-The dataset includes customer demographics, product categories, purchase amounts, locations, seasons, review ratings, subscription status, shipping types, payment methods, and purchase frequency.
+**Dataset size:** 3,900 records and 18 columns.
 
-## Tools Used
+## 🛠️ Tools & Technologies
 
-- **Microsoft Excel:** Initial data inspection, cleaning checks, and exploratory analysis.
-- **MySQL:** SQL queries, aggregations, grouping, filtering, and business analysis.
-- **Python:** Pandas-based data quality checks, summaries, and exploratory analysis.
-- **Power BI:** KPI cards, charts, slicers, and interactive dashboard design.
+- **Python:** Data loading, cleaning, EDA, and visualization
+- **Pandas:** Data manipulation and analysis
+- **Matplotlib:** Data visualization
+- **SQL:** Data querying, aggregation, joins, and customer segmentation
+- **MySQL:** Database management and SQL analysis
+- **Power BI:** Interactive dashboards and KPI visualization
+- **Microsoft Excel:** Data inspection and preliminary analysis
+- **Gamma:** Presentation creation
+- **GitHub:** Project version control and portfolio sharing
 
-## Data Quality Checks
+## 🔄 Project Workflow
 
-The analysis included checks for missing values, duplicate records, unique customer IDs, and consistency between columns.
+### 1. Data Loading
+- Imported the dataset into Python using Pandas.
+- Loaded the data into the SQL database for querying and analysis.
 
-Key findings:
+### 2. Data Cleaning
+- Checked for missing values and duplicate records.
+- Investigated missing review ratings.
+- Validated data types and values.
+- Standardized column names for consistency.
 
-- 37 missing values were found in `review_rating`, representing approximately 0.95% of the dataset.
-- No full-row duplicates were identified.
-- `customer_id` was unique in the dataset.
-- `discount_applied` and `promo_code_used` contained identical values across the dataset and were flagged as potentially redundant fields.
-- Missing review ratings were not replaced with invented values.
+### 3. Exploratory Data Analysis (EDA)
+- Examined dataset structure and summary statistics.
+- Analyzed purchase amounts and customer demographics.
+- Compared sales across categories and locations.
+- Explored purchasing frequency and customer behavior.
 
-## Key Findings
+### 4. SQL Analysis
+- Used aggregate functions such as `SUM()`, `AVG()`, and `COUNT()`.
+- Applied filtering, grouping, sorting, and conditional logic.
+- Analyzed category and seasonal performance.
+- Segmented customers based on previous purchase history.
 
-### Overall Metrics
+### 5. Power BI Dashboard
+- Created KPI cards to summarize business performance.
+- Visualized purchase amounts by category, gender, and season.
+- Added slicers for interactive filtering.
+- Compared location-level performance.
 
-|Metric| Result  |
-|------|--------:|
-| Total purchase amount| 233,081 |
-| Total purchases| 3,900   |
-| Average purchase amount| 59.76   |
-| Average review rating| 3.75    |
+### 6. Reporting & Presentation
+- Summarized key findings and business observations.
+- Prepared a project report.
+- Used Gamma to organize findings into a presentation.
 
-The average review rating is calculated from non-missing ratings. The currency unit for purchase amounts was not verified.
+## 📈 Dashboard
 
-### Purchase Amount by Category
+The Power BI dashboard provides an interactive view of customer shopping behavior.
 
-|  Category | Total purchase amount |
-|-----------|----------------------:|
-| Clothing    |        104,264        |
-| Accessories |        74,200         |
-| Footwear    |        36,093         |
-| Outerwear   |        18,524         |
-
-Clothing had the highest total purchase amount, while Outerwear had the lowest.
-
-### Purchase Amount by Season
-
-| Season | Total purchase amount |
-|--------|----------------------:|
-| Fall   |         60,018        |
-| Spring |         58,679        |
-| Winter |         58,607        |
-| Summer |         55,777        |
-
-Fall recorded the highest total purchase amount, while Summer recorded the lowest. The differences are descriptive and do not establish that season caused the purchasing patterns.
-
-### Subscription Comparison
-
-| Subscription status | Average purchase amount |
-|---------------------|------------------------:|
-|          No         | 59.87                   |
-|          Yes        | 59.49                   |
-
-Average purchase amounts were similar between subscribers and non-subscribers. This comparison alone does not establish whether subscription status affects spending.
-
-## Power BI Dashboard
-
-The dashboard includes four KPI cards:
-
+**Key KPIs include:**
 - Total Purchase Amount
 - Total Purchases
 - Average Purchase Amount
 - Average Review Rating
 
-It also includes four charts:
+### Dashboard Preview
 
-- Purchase Amount by Category
-- Purchase Amount by Gender
-- Purchase Amount by Season
-- Top 5 Locations by Purchase Amount
+ ![Customer Shopping Behavior Dashboard](./image/dashboard.png)
+**Interactive report:** `Customer_Shopping_Analysis.pbix`
 
-Interactive slicers allow users to filter the report by category, season, and gender.
+Open the `.pbix` file using Power BI Desktop to explore the report.
 
-## Project Workflow
+## 🔍 Key Results
 
-1. Inspected the dataset and checked data quality in Excel.
-2. Used MySQL to query and aggregate customer shopping data.
-3. Used Python and Pandas for data quality checks and exploratory analysis.
-4. Built an interactive Power BI dashboard to communicate the findings.
+- **Total purchase amount:** 233,081
+- **Total purchases:** 3,900
+- **Average purchase amount:** 59.76
+- **Average review rating:** 3.75
 
-## Limitations
+### Category Performance
 
-- The dataset describes observed shopping records; it does not establish causal relationships.
-- Missing review ratings may affect rating-based analysis.
-- Identical discount and promo-code fields may limit the ability to compare their separate effects.
-- The currency unit was not verified.
-- The dataset's patterns may not represent all customers or retailers.
+| Category | Total Purchase Amount | Share of Total |
+|---|---:|---:|
+| Clothing | 104,264 | 44.73% |
+| Accessories | 74,200 | 31.83% |
+| Footwear | 36,093 | 15.49% |
+| Outerwear | 18,524 | 7.95% |
 
-## Conclusion
+Clothing contributed the largest share of the total purchase amount, followed by Accessories. These findings help highlight the categories contributing most to overall purchasing activity.
 
-This project demonstrates an end-to-end data analysis workflow, from data quality checks and SQL analysis to Python exploration and Power BI visualization. It highlights differences in purchase amounts across product categories, seasons, and subscription groups while documenting data quality considerations and analytical limitations.
+## 💡 Business Value
 
-## Skills Demonstrated
+This analysis helps demonstrate how customer data can be used to:
 
-Excel · SQL · MySQL · Python · Pandas · Exploratory Data Analysis · Data Cleaning · Data Visualization · Power BI · DAX · Business Reporting
+- Identify high-performing product categories.
+- Understand customer purchasing patterns.
+- Compare performance across locations and seasons.
+- Monitor key performance indicators.
+- Support evidence-based business decisions.
+
+## ▶️ How to Run
+
+### Prerequisites
+
+Install Python, the required Python libraries, a supported SQL database, and Power BI Desktop.
+
+### 1. Clone the Repository
+
+```bash
+git clone <your-github-repository-url>
+cd Customer-Shopping-Behavior-Analysis
+```
+
+### 2. Install Python Libraries
+
+```bash
+pip install pandas matplotlib
+```
+
+Install any additional libraries imported by your Python script.
+
+### 3. Run the Python Analysis
+
+```bash
+python Analyze.py
+```
+
+Ensure the CSV file path in the script matches the location of your dataset.
+
+### 4. Run the SQL Queries
+
+- Create or select your database.
+- Import the dataset into the appropriate table.
+- Open `SQL.sql` in your SQL client.
+- Execute the queries using the correct database connection and syntax.
+
+The current project uses MySQL. PostgreSQL and SQL Server may require syntax or connection adjustments.
+
+### 5. Open the Power BI Dashboard
+
+Open `Customer_Shopping_Analysis.pbix` in Power BI Desktop. If prompted, configure the appropriate data source connection.
+
+## 📁 Project Structure
+
+```text
+Customer-Shopping-Behavior-Analysis/
+├── data/
+│   └── customer_shopping_behavior.csv
+├── image/
+│   └── dashboard.png
+├── Analyze.py
+├── SQL.sql
+├── Customer_Shopping_Analysis.pbix
+└── README.md
+```
+
+Adjust the filenames and folder structure above to match the actual repository.
+
+## 👨‍💻 Author
+
+**Piyush**
+
+Aspiring Data Analyst | Python | SQL | Power BI | Excel
+
+This project demonstrates practical skills in data cleaning, exploratory analysis, SQL querying, dashboard development, and business insight communication.
