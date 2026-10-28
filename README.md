@@ -87,7 +87,7 @@ The Power BI dashboard provides an interactive view of customer shopping behavio
 
 ### Dashboard Preview
 
- ![Customer Shopping Behavior Dashboard](./image/dashboard.png)
+ ![Customer Shopping Behavior Dashboard](./dashboard.png)
 **Interactive report:** `Customer_Shopping_Analysis.pbix`
 
 Open the `.pbix` file using Power BI Desktop to explore the report.
